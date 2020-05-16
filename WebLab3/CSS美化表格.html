@@ -1,0 +1,154 @@
+<! DOCTYPE html PUBLIC "//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns = "http://www.w3.org/1999/xhtml">
+<head>
+	<title>表格美化</title>
+	<style type="text/css">
+		table
+		{
+			border: 1px solid #8f0030;
+			border-bottom: 2px solid #8f0030;
+			border-top: 2px solid #8f0030;
+			border-left-color: transparent;
+			border-right-color: transparent;
+			border-collapse: collapse;
+		}
+		th
+		{
+			background: transparent;
+			border-left-color: #8f0030;
+			border-right-color: #8f0030;
+			border-bottom: 2px solid #8f0030;
+			font-size: large;
+			padding: 3px;
+			color: #2f0614;
+			font-family: "Heiti SC";
+		}
+		td
+		{
+			border-top-color: #8f0030;
+			border-bottom-color: #8f0030;
+			border-left-color: #8f0030;
+			border-right-color: #8f0030;
+			color: #2f0614;
+			padding: 3px;
+		}
+		/*奇数行背景*/
+		tr.odd
+		{
+			background: #eebdcd;
+		}
+		/*偶数行背景*/
+		tr.even
+		{
+			background: #f1dce1;
+		}
+		/*鼠标在某表格行上时，该行背景色改变字体加下划线*/
+		tr.mover
+		{
+			background: #859ee0;
+			text-decoration: underline;
+		}
+		/*鼠标单击某行后字体加粗背景色改变*/
+		tr.click
+		{
+			background: #d0234c;
+			font-weight: bold;
+		}
+	</style>
+</head>
+<script type="text/javascript">
+	/*加载页面时调用window.onload事件*/
+	window.onload = function() {
+		var tables = document.getElementsByTagName("table");
+		tableEvent(tables[0]);
+		Click(tables[0]);
+	}
+	/*奇数行偶数行颜色交替，并且鼠标移入移除行样式变换*/
+	function tableEvent(table) {
+		var trs = table.getElementsByTagName("tr");
+		var n = trs.length;
+		for (i = 1; i < n; i++) {
+			var tr = trs[i];
+			if (i % 2 == 0)
+				tr.className = "even";
+			else
+				tr.className = "odd";
+			tr.onmouseover = function() {temp = this.className; this.className = 'mover';}
+			tr.onmouseout = function() {this.className = this.className.replace('mover',temp);}
+		}
+	}
+	/*鼠标击中某行*/
+	function Click(table) {
+		var trs = table.getElementsByTagName("tr");
+		var n = trs.length;
+		for (i = 1; i < n; i++) {
+			var tr = trs[i];
+			tr.onclick = function() {
+				//还原样式
+				for (j = 0; j < n; j++) {
+					if (j % 2 == 0)
+						trs[j].className = "even";
+					else
+						trs[j].className = "odd";
+				}
+				this.className = "click";
+			}
+		}
+	}
+
+</script>
+<center>
+	<body>
+		<table width = "500" border = "1">
+			<tr>
+				<th scope = "col">姓名</th>
+				<th scope = "col">学号</th>
+				<th scope = "col">性别</th>
+				<th scope = "col">年龄</th>
+				<th scope = "col">联系方式</th>
+				<th scope = "col">家庭住址</th>
+			</tr>
+			<tr>
+				<td align = "center">张三</td>
+				<td align = "center">20100001</td>
+				<td align = "center">女</td>
+				<td align = "center">22</td>
+				<td align = "center">0000000</td>
+				<td align = "center">重庆</td>
+			</tr>
+			<tr>
+				<td align = "center">王五</td>
+				<td align = "center">20100002</td>
+				<td align = "center">男</td>
+				<td align = "center">22</td>
+				<td align = "center">0000001</td>
+				<td align = "center">四川</td>
+			</tr>
+			<tr>
+				<td align = "center">李丽</td>
+				<td align = "center">20100003</td>
+				<td align = "center">女</td>
+				<td align = "center">22</td>
+				<td align = "center">0000003</td>
+				<td align = "center">江苏</td>
+			</tr>
+			<tr>
+				<td align = "center">王平</td>
+				<td align = "center">20100004</td>
+				<td align = "center">男</td>
+				<td align = "center">21</td>
+				<td align = "center">0000006</td>
+				<td align = "center">浙江</td>
+			</tr>
+			<tr>
+				<td align = "center">林远</td>
+				<td align = "center">20100005</td>
+				<td align = "center">男</td>
+				<td align = "center">23</td>
+				<td align = "center">0000007</td>
+				<td align = "center">重庆</td>
+			</tr>
+		</table>
+	</body>
+</center>
+</html>

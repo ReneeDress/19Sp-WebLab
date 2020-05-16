@@ -1,0 +1,38 @@
+<! DOCTYPE html PUBLIC "//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns = "http://www.w3.org/1999/xhtml">
+<head>
+	<title> clock </title>
+<script type="text/javascript">
+	var IntervalID;
+	function f_myClock() {
+		var Today = new Date();
+		nowTime = Today.getHours() + ":" + Today.getMinutes() + ":" + Today.getSeconds();
+		myClock.innerHTML = nowTime;
+	}
+	function timer() {
+		IntervalID = setInterval('f_myClock()', 1000)
+		return IntervalID;
+	}
+	function Button1_onclick() {
+		var Today = new Date();
+		nowDateTime = "现在是北京时间" + Today.getFullYear() + "年" + (Today.getMonth() + 1) + "月" + Today.getDate() + "日";
+		myTime.innerHTML = nowDateTime;
+		timer();
+	}
+	function Button2_onclick() {
+		clearInterval(IntervalID);
+	}
+	function Button3_onclick() {
+		window.close();
+	}
+</script>
+</head>
+<body>
+	<center>
+		<div id = "myTime" style = "font-family: 宋体, Arial, Helvetica, sans-serif; font-size: 50px; color: #9E9E9E">现在是北京时间2020年x月x日</div>
+		<div id = "myClock" style = "font-size: 50pt; color: #2AB9C1">00:00:00</div>
+		<input id = "Button1" type="button" value = "Start" onclick = "return Button1_onclick()" />
+		<input id = "Button2" type="button" value = "Stop" onclick = "return Button2_onclick()" />
+		<input id = "Button3" type="button" value = "close" onclick = "return Button3_onclick()" />
+	</center>
+</body>

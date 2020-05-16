@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>随机验证码练习</title>
+    <script type="text/javascript">
+        var s="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";//验证码中可能包含的字符
+        function create(n) {
+            var b = "";//保存生成的验证码，验证码是一个字符串类型
+            for (var i = 0; i < n; i++)
+            {
+                var index = Math.floor(Math.random()*62)//随机产生0-62个之间随机数
+                b = b + s.charAt(index);//将随机产生的数字当做字符串的下标，然后用charAt函数将它取出来然后放入b中
+            }
+            return b;//返回随机产生的验证码
+        }
+        function verity() {
+            var ip = document.getElementById("input").value;
+            if (document.getElementById("verify").innerHTML == ip) {
+                document.getElementById("torf").innerHTML = "验证成功";
+            }
+            else {
+                document.getElementById("torf").innerHTML = "验证失败";
+                document.getElementById("verify").innerHTML = create(4);
+            }
+        }
+        function refresh() {
+            document.getElementById("verify").innerHTML = create(4);
+            document.getElementById("torf").innerHTML = "输入验证码";
+        }
+        window.onload=refresh;
+    </script>
+</head>
+<body style="text-align: center;">
+<br>
+<br>
+<span id="torf">输入验证码</span>
+<br>
+<br>
+<span id="verify"></span>
+<br>
+<br>
+<input id="input" type="text" value="">
+<br>
+<br>
+<input type="button" value="确认" onClick="verity()">
+<input type="button" value="刷新" onClick="refresh()">
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <title>Beautiful Tables</title>
+    <style type="text/css">
+        .odd_color { background-color: #ffffff; }
+        .even_color { background-color: #dbeaf5; }
+        .mover_color { background-color: #6699cc; }
+        .onclick_color { background-color: #4c7dab; }
+    </style>
+    <script>
+        $(function () {
+            $("tr").click(function () {
+                $(this).toggleClass("onclick_color");
+            });
+            $("tr").hover(
+                function () { $(this).addClass("mover_color"); },
+                function () { $(this).removeClass("mover_color"); }
+            );
+            $("tr:odd").addClass("odd_color");
+            $("tr:even").addClass("even_color");
+        });
+    </script>
+</head>
+<body onload="beau_tables('table')">
+<table id="table" style="margin-left: auto; margin-right: auto" width = "500" border = "1">
+    <tr>
+        <th scope = "col">姓名</th>
+        <th scope = "col">学号</th>
+        <th scope = "col">性别</th>
+        <th scope = "col">年龄</th>
+        <th scope = "col">联系方式</th>
+        <th scope = "col">家庭住址</th>
+    </tr>
+    <tr>
+        <td align = "center">张三</td>
+        <td align = "center">20100001</td>
+        <td align = "center">女</td>
+        <td align = "center">22</td>
+        <td align = "center">0000000</td>
+        <td align = "center">重庆</td>
+    </tr>
+    <tr>
+        <td align = "center">王五</td>
+        <td align = "center">20100002</td>
+        <td align = "center">男</td>
+        <td align = "center">22</td>
+        <td align = "center">0000001</td>
+        <td align = "center">四川</td>
+    </tr>
+    <tr>
+        <td align = "center">李丽</td>
+        <td align = "center">20100003</td>
+        <td align = "center">女</td>
+        <td align = "center">22</td>
+        <td align = "center">0000003</td>
+        <td align = "center">江苏</td>
+    </tr>
+    <tr>
+        <td align = "center">王平</td>
+        <td align = "center">20100004</td>
+        <td align = "center">男</td>
+        <td align = "center">21</td>
+        <td align = "center">0000006</td>
+        <td align = "center">浙江</td>
+    </tr>
+    <tr>
+        <td align = "center">林远</td>
+        <td align = "center">20100005</td>
+        <td align = "center">男</td>
+        <td align = "center">23</td>
+        <td align = "center">0000007</td>
+        <td align = "center">重庆</td>
+    </tr>
+</table>
+</body>
+</html>

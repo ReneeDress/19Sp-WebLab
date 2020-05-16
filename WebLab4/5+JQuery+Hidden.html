@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".ex .toggle").click(function(){
+                $('#text').toggle("slow");
+            });
+        });
+        $(document).ready(function(){
+            $(".ex .hide").click(function(){
+                $('#text').hide("slow");
+            });
+        });
+        $(document).ready(function(){
+            $(".ex .show").click(function(){
+                $('#text').show("slow");
+            });
+        });
+    </script>
+    <style type="text/css">
+        div.ex
+        {
+            background-color:#e5eecc;
+            padding:7px;
+            border:solid 1px #c3c3c3;
+        }
+    </style>
+</head>
+<body>
+
+<h3>JQuery的隐藏与显示</h3>
+<div class="ex">
+    <button class="toggle">点我隐藏/显示</button> <button class="hide">点我隐藏</button> <button class="show">点我显示</button>
+    <p id="text">你看到我了<br>
+        没错你看到我了</p>
+</div>
+<br>
+<div class="ex">
+    <p id="hah">你拿我没办法<br>
+        没错你拿我没办法</p>
+</div>
+</body>
+</html>

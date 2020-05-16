@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html">
+    <title>省市二级联动菜单</title>
+</head>
+<body bgcolor="#FFFFFF" topmargin=0 leftmargin=300 onload="init()">
+<form action="<#ZC_BLOG_HOST#>" method="post" name="creator" enctype="multipart/form-data">
+    <script language="javascript">
+        <!--
+            var where = new Array(3);
+            function comefrom(loca, locacity) { this.loca = loca; this.locacity = locacity; }
+            where[0] = new comefrom("请选择省份名", "请选择城市名");
+            where[1] = new comefrom("北京", "朝阳|丰台|海淀|东城|怀柔|密云");
+            where[2] = new comefrom("上海", "徐汇|宝山|长宁|静安");
+            where[3] = new comefrom("湖南", "长沙|岳阳|湘潭|怀化");
+            function select() {
+                with (document.creator.province) {var loca2 = options[selectedIndex].value;}
+                for (i = 0; i < where.length; i++) {
+                    if (where[i].loca == loca2) {
+                        loca3 = (where[i].locacity).split("|");
+                        for (j = 0; j < loca3.length; j++) {
+                            with (document.creator.city) {
+                                length = loca3.length;
+                                options[j].text = loca3[j];
+                                options[j].value = loca3[j];
+                                var loca4 = options[selectedIndex].value;
+                            }
+                        }
+                        break;
+                    }
+                }
+                document.creator.newlocation.value = loca2 + loca4;
+            }
+            function init() {
+                with (document.creator.province) {
+                    length = where.length;
+                    for (k = 0; k < where.length; k++) {
+                        options[k].text = where[k].loca;
+                        options[k].value = where[k].loca;
+                    }
+                    options[selectedIndex].text = where[0].loca;
+                    options[selectedIndex].value = where[0].loca;
+                }
+                with (document.creator.city) {
+                    loca3 = (where[0].locacity).split("|");
+                    length = loca3.length;
+                    for (l = 0; l < where.length; l++) {
+                        options[l].text = loca3[l];
+                        options[l].value = loca3[l];
+                    }
+                    options[selectedIndex].text = loca3[0];
+                    options[selectedIndex].value = loca3[0];
+                }
+            }
+        -->
+    </script>
+    <select name="province" onChange="select()">省份</select>
+    <select name="city" onChange="select()">城市</select>
+</form>
+</body>
+</html>
