@@ -1,0 +1,13 @@
+C:\Users\renee\Desktop\WebLab6\WebLab6\bin\Debug\jxgl.mdf
+C:\Users\renee\Desktop\WebLab6\WebLab6\bin\Debug\jxgl_log.ldf
+C:\Users\renee\Desktop\WebLab6\WebLab6\bin\Debug\WebLab6.exe.config
+C:\Users\renee\Desktop\WebLab6\WebLab6\bin\Debug\WebLab6.exe
+C:\Users\renee\Desktop\WebLab6\WebLab6\bin\Debug\WebLab6.pdb
+C:\Users\renee\Desktop\WebLab6\WebLab6\obj\Debug\WebLab6.csprojAssemblyReference.cache
+C:\Users\renee\Desktop\WebLab6\WebLab6\obj\Debug\WebLab6.Properties.Resources.resources
+C:\Users\renee\Desktop\WebLab6\WebLab6\obj\Debug\WebLab6.csproj.GenerateResource.cache
+C:\Users\renee\Desktop\WebLab6\WebLab6\obj\Debug\WebLab6.csproj.CoreCompileInputs.cache
+C:\Users\renee\Desktop\WebLab6\WebLab6\obj\Debug\WebLab6.exe
+C:\Users\renee\Desktop\WebLab6\WebLab6\obj\Debug\WebLab6.pdb
+C:\Users\renee\Desktop\WebLab6\WebLab6\obj\Debug\WebLab6.Data.resources
+C:\Users\renee\Desktop\WebLab6\WebLab6\obj\Debug\WebLab6.Login.resources
